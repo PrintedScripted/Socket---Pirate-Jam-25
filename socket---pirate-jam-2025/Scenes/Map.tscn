@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddt88exu6445"]
+
+[ext_resource type="Texture2D" uid="uid://d3m24njyngnxv" path="res://Sprites/black_background.png" id="1_hecyh"]
+[ext_resource type="PackedScene" uid="uid://drjj7gl8k7x17" path="res://Scenes/Player/Player.tscn" id="2_xm666"]
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="3_k5hh6"]
+[ext_resource type="PackedScene" uid="uid://c16755oqq5wqb" path="res://Scenes/Enemies/Striker.tscn" id="4_aio3x"]
+[ext_resource type="PackedScene" uid="uid://hy2i1qnbe8i5" path="res://Scenes/Enemies/Dasher.tscn" id="5_kdxtk"]
+[ext_resource type="PackedScene" uid="uid://bre27k0wm1qsp" path="res://Scenes/Enemies/Warper.tscn" id="6_lyvri"]
+
+[sub_resource type="Environment" id="Environment_thjbp"]
+background_mode = 3
+ambient_light_source = 1
+glow_enabled = true
+glow_intensity = 2.0
+glow_bloom = 1.0
+glow_hdr_threshold = 1.5
+glow_hdr_luminance_cap = 256.0
+
+[node name="Level" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -2747.0
+offset_top = -1725.0
+offset_right = 2809.0
+offset_bottom = 1719.0
+texture = ExtResource("1_hecyh")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_thjbp")
+
+[node name="Player" parent="." instance=ExtResource("2_xm666")]
+modulate = Color(0, 0, 2, 1)
+scale = Vector2(0.25, 0.25)
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+limit_left = -2000
+limit_top = -2000
+limit_right = 2000
+limit_bottom = 2000
+script = ExtResource("3_k5hh6")
+target = NodePath("../Player")
+MAX_DISTANCE = 0.1
+
+[node name="Striker" parent="." instance=ExtResource("4_aio3x")]
+modulate = Color(1.2, 0, 0, 1)
+position = Vector2(-185, 64)
+scale = Vector2(0.3, 0.3)
+
+[node name="Dasher" parent="." instance=ExtResource("5_kdxtk")]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(-184, 146)
+scale = Vector2(0.3, 0.3)
+
+[node name="Warper" parent="." instance=ExtResource("6_lyvri")]
+modulate = Color(0, 2, 0, 1)
+position = Vector2(-183, 237)
+scale = Vector2(0.3, 0.3)

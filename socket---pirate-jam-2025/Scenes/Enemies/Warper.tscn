@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bre27k0wm1qsp"]
+
+[ext_resource type="Texture2D" uid="uid://8p0d7sy63ik4" path="res://Sprites/Enemy/Warper.png" id="1_lf84r"]
+[ext_resource type="Script" path="res://Scenes/Enemies/point_center.gd" id="2_gpdv3"]
+
+[node name="Warper" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lf84r")
+script = ExtResource("2_gpdv3")

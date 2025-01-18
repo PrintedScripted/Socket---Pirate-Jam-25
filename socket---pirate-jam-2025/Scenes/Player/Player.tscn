@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://drjj7gl8k7x17"]
+
+[ext_resource type="Texture2D" uid="uid://bievvjtnp17v3" path="res://Sprites/Player/Center_sprite.png" id="1_h5qtt"]
+[ext_resource type="Shader" path="res://Shaders/Glow.gdshader" id="1_kydsr"]
+[ext_resource type="Script" path="res://Scripts/aim_primary.gd" id="2_ktup5"]
+[ext_resource type="PackedScene" uid="uid://b8vj5mdvid2gn" path="res://Scenes/Player/Primary_Weapon.tscn" id="2_xqwic"]
+[ext_resource type="PackedScene" uid="uid://dr5v3sk27u6pe" path="res://Scenes/Player/Secondary_Weapon.tscn" id="3_p858f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7su6x"]
+shader = ExtResource("1_kydsr")
+shader_parameter/glow_color = Color(0, 0, 1, 1)
+shader_parameter/glow_power = 6.0
+shader_parameter/glow_shift = 5.0
+shader_parameter/glow_radius = 6.0
+
+[node name="Player" type="Node2D"]
+
+[node name="Center" type="Sprite2D" parent="."]
+texture = ExtResource("1_h5qtt")
+script = ExtResource("2_ktup5")
+
+[node name="Secondary_Weapon" parent="Center" instance=ExtResource("3_p858f")]
+material = SubResource("ShaderMaterial_7su6x")
+
+[node name="Primary_Weapon" parent="Center" instance=ExtResource("2_xqwic")]
