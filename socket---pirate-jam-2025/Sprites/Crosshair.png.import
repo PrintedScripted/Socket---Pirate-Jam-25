@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbrbgic8deoue"
-path="res://.godot/imported/Weapon_Cannon.png-29d3130a0555f1ee327351728faac29d.ctex"
+uid="uid://yrqonjs6uipe"
+path="res://.godot/imported/Crosshair.png-a2c6dd7c570cec81011a43a0b2be86c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Weapons/Weapon_Cannon.png"
-dest_files=["res://.godot/imported/Weapon_Cannon.png-29d3130a0555f1ee327351728faac29d.ctex"]
+source_file="res://Sprites/Crosshair.png"
+dest_files=["res://.godot/imported/Crosshair.png-a2c6dd7c570cec81011a43a0b2be86c6.ctex"]
 
 [params]
 

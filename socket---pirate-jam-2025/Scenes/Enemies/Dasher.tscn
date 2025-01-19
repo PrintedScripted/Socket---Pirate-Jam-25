@@ -1,10 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://hy2i1qnbe8i5"]
 
 [ext_resource type="Texture2D" uid="uid://cnqu20xtvaf30" path="res://Sprites/Enemy/Dasher.png" id="1_a15u3"]
-[ext_resource type="Script" path="res://Scenes/Enemies/point_center.gd" id="2_2le20"]
+[ext_resource type="Script" path="res://Scripts/Enemy/enemy_base.gd" id="1_w643j"]
 
-[node name="Dasher" type="Node2D"]
+[node name="Dasher" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("1_w643j")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-69, 95, 1, 29, 70, 94, 0, -125)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_a15u3")
-script = ExtResource("2_2le20")

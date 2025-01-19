@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d3m24njyngnxv" path="res://Sprites/black_background.png" id="1_hecyh"]
 [ext_resource type="PackedScene" uid="uid://drjj7gl8k7x17" path="res://Scenes/Player/Player.tscn" id="2_xm666"]
-[ext_resource type="Script" path="res://Scripts/camera.gd" id="3_k5hh6"]
+[ext_resource type="Script" path="res://Scripts/Misc/camera.gd" id="3_k5hh6"]
 [ext_resource type="PackedScene" uid="uid://c16755oqq5wqb" path="res://Scenes/Enemies/Striker.tscn" id="4_aio3x"]
 [ext_resource type="PackedScene" uid="uid://hy2i1qnbe8i5" path="res://Scenes/Enemies/Dasher.tscn" id="5_kdxtk"]
 [ext_resource type="PackedScene" uid="uid://bre27k0wm1qsp" path="res://Scenes/Enemies/Warper.tscn" id="6_lyvri"]

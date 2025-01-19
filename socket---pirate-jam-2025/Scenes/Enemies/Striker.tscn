@@ -1,10 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://c16755oqq5wqb"]
 
 [ext_resource type="Texture2D" uid="uid://c0lttl5ko4v8t" path="res://Sprites/Enemy/Striker.png" id="1_nl04r"]
-[ext_resource type="Script" path="res://Scenes/Enemies/point_center.gd" id="2_1fevd"]
+[ext_resource type="Script" path="res://Scripts/Enemy/enemy_base.gd" id="2_tlg3w"]
 
 [node name="Striker" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_nl04r")
-script = ExtResource("2_1fevd")
+script = ExtResource("2_tlg3w")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, -59, -70, 61, 69, 61)
