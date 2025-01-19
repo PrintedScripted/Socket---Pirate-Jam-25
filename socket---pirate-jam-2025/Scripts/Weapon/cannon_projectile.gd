@@ -5,7 +5,7 @@ class_name Projectile
 var lifespan: float = 2
 var speed: float = 50.0
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	position += transform.x * speed
 
 func _ready() -> void:
