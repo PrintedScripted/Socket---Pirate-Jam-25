@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c16755oqq5wqb"]
+[gd_scene load_steps=4 format=3 uid="uid://c16755oqq5wqb"]
 
+[ext_resource type="Script" path="res://Scripts/Enemy/enemy_base.gd" id="1_bguuy"]
 [ext_resource type="Texture2D" uid="uid://c0lttl5ko4v8t" path="res://Sprites/Enemy/Striker.png" id="1_nl04r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jepp6"]
@@ -9,6 +10,7 @@ radius = 81.172
 modulate = Color(1.3, 0, 0, 1)
 scale = Vector2(0.3, 0.3)
 motion_mode = 1
+script = ExtResource("1_bguuy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, -59, -70, 61, 0, 66.6667, 69, 61)

@@ -83,8 +83,6 @@ func spawn_enemies():
 			elif enemy_inst != null:
 				level.add_child(enemy_inst)
 				enemy_inst.global_position = Vector2(random_spawn.global_position.x + randf_range(0.0, 200.0), random_spawn.global_position.y + randf_range(0.0, 200.0))
-#				enemy_inst.health_scaling = enemy_health_scaling
-				enemy_inst.speed_scaling = enemy_speed_scaling
 				enemy_spawn_count += 1
 			
 			if enemy_spawn_count == 250:
