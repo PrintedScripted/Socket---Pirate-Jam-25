@@ -4,7 +4,7 @@ class_name Projectile
 
 @export var lifespan: float = 2
 @export var speed: float = 50.0
-@export var damage: float = 15.0
+@export var damage: float = 100.0
 var spawned_from: Node
 
 func _physics_process(_delta: float) -> void:

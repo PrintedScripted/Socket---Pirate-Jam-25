@@ -9,7 +9,7 @@ enum MODES { TARGET_MOUSE_BLENDED }
 @export var SMOOTH_SPEED: float = 5.0
 
 var target_position := Vector2.INF
-var fallback_target: Node = null
+var fallback_target: Node = target
 
 func _ready():
 	fallback_target = target
@@ -22,8 +22,6 @@ func _process(delta: float):
 				target_position = (target.position + mouse_pos)
 				target_position.x = clamp(target_position.x, -MAX_DISTANCE + target_position.x, MAX_DISTANCE + target_position.x)
 				target_position.y = clamp(target_position.y, -MAX_DISTANCE + target_position.y, MAX_DISTANCE + target_position.y)
-				
+		
 	if target_position != Vector2.INF:
-		position = lerp(position, target_position / 2, SMOOTH_SPEED * delta)
-		
-		
+		position = lerp(position, target_position * 10, SMOOTH_SPEED * delta)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drjj7gl8k7x17"]
+[gd_scene load_steps=10 format=3 uid="uid://drjj7gl8k7x17"]
 
 [ext_resource type="Texture2D" uid="uid://bievvjtnp17v3" path="res://Sprites/Player/Center_sprite.png" id="1_h5qtt"]
 [ext_resource type="Shader" path="res://Shaders/Glow.gdshader" id="1_kydsr"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0kigr"]
 radius = 206.022
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_autx1"]
+radius = 229.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7su6x"]
 shader = ExtResource("1_kydsr")
@@ -25,6 +28,11 @@ projectile = ExtResource("2_4kk73")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0kigr")
+
+[node name="Enemy_Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Detection"]
+shape = SubResource("CircleShape2D_autx1")
 
 [node name="Center" type="Sprite2D" parent="."]
 texture = ExtResource("1_h5qtt")

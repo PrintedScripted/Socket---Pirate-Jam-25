@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl0nukjgdwqtv"]
+
+[ext_resource type="Script" path="res://Scripts/Misc/spawn_rotate.gd" id="1_je8yi"]
+[ext_resource type="PackedScene" uid="uid://y1u2u2vfrxdd" path="res://Scenes/Misc/spawnpoint.tscn" id="2_bs3hh"]
+[ext_resource type="PackedScene" uid="uid://cdiyghvq4jcgi" path="res://Scenes/Collectors/resource_spawnpoint.tscn" id="3_0j586"]
+
+[node name="Center" type="Marker2D"]
+script = ExtResource("1_je8yi")
+
+[node name="Spawnpoint4" parent="." instance=ExtResource("2_bs3hh")]
+position = Vector2(3000, 0)
+
+[node name="Spawnpoint3" parent="." instance=ExtResource("2_bs3hh")]
+position = Vector2(-3000, 0)
+
+[node name="Spawnpoint2" parent="." instance=ExtResource("2_bs3hh")]
+position = Vector2(0, 3000)
+
+[node name="Spawnpoint" parent="." instance=ExtResource("2_bs3hh")]
+position = Vector2(0, -3000)
+
+[node name="Resource" parent="." instance=ExtResource("3_0j586")]
+
+[node name="Resource2" parent="." instance=ExtResource("3_0j586")]
+position = Vector2(300, 0)
+
+[node name="Resource3" parent="." instance=ExtResource("3_0j586")]
+position = Vector2(0, 300)
+
+[node name="Resource4" parent="." instance=ExtResource("3_0j586")]
+position = Vector2(-300, 0)

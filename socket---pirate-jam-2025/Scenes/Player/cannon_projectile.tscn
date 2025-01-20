@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://deb6ddak4as6l"]
 
 [ext_resource type="Script" path="res://Scripts/Weapon/cannon_projectile.gd" id="1_02vyb"]
-[ext_resource type="Texture2D" uid="uid://5nkwjsatrtjd" path="res://Sprites/drone.png" id="2_1xjs4"]
+[ext_resource type="Texture2D" uid="uid://5nkwjsatrtjd" path="res://Sprites/Collectors/drone.png" id="2_1xjs4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c16bx"]
 radius = 52.0384

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxo3osun7dr48"]
+
+[ext_resource type="Script" path="res://Scripts/Misc/camera.gd" id="1_yk668"]
+
+[node name="Camera2D" type="Camera2D"]
+limit_left = -2000
+limit_top = -2000
+limit_right = 2000
+limit_bottom = 2000
+limit_smoothed = true
+script = ExtResource("1_yk668")
+MAX_DISTANCE = 0.1
+
+[node name="HUD" type="CanvasLayer" parent="."]

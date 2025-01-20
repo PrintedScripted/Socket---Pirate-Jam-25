@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddt88exu6445"]
+[gd_scene load_steps=6 format=3 uid="uid://ddt88exu6445"]
 
 [ext_resource type="Texture2D" uid="uid://d3m24njyngnxv" path="res://Sprites/black_background.png" id="1_hecyh"]
 [ext_resource type="PackedScene" uid="uid://drjj7gl8k7x17" path="res://Scenes/Player/Player.tscn" id="2_xm666"]
-[ext_resource type="Script" path="res://Scripts/Misc/camera.gd" id="3_k5hh6"]
-[ext_resource type="Script" path="res://Scripts/Misc/spawn_rotate.gd" id="4_5i1lb"]
-[ext_resource type="PackedScene" uid="uid://y1u2u2vfrxdd" path="res://spawnpoint.tscn" id="7_0qyqq"]
+[ext_resource type="Script" path="res://Scripts/Misc/camera.gd" id="3_ql2ge"]
+[ext_resource type="PackedScene" uid="uid://bl0nukjgdwqtv" path="res://Scenes/Misc/Spawners.tscn" id="4_jfd88"]
 
 [sub_resource type="Environment" id="Environment_thjbp"]
 background_mode = 3
@@ -32,26 +31,15 @@ modulate = Color(0, 0, 2, 1)
 scale = Vector2(0.25, 0.25)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-limit_left = -2000
-limit_top = -2000
-limit_right = 2000
-limit_bottom = 2000
+limit_left = -3500
+limit_top = -3500
+limit_right = 3500
+limit_bottom = 3500
 limit_smoothed = true
-script = ExtResource("3_k5hh6")
-target = NodePath("../Player")
+script = ExtResource("3_ql2ge")
+target = NodePath("../Center")
 MAX_DISTANCE = 0.1
 
-[node name="Center" type="Marker2D" parent="."]
-script = ExtResource("4_5i1lb")
+[node name="HUD" type="CanvasLayer" parent="Camera2D"]
 
-[node name="Spawnpoint4" parent="Center" instance=ExtResource("7_0qyqq")]
-position = Vector2(3000, 0)
-
-[node name="Spawnpoint3" parent="Center" instance=ExtResource("7_0qyqq")]
-position = Vector2(-3000, 0)
-
-[node name="Spawnpoint2" parent="Center" instance=ExtResource("7_0qyqq")]
-position = Vector2(0, 3000)
-
-[node name="Spawnpoint" parent="Center" instance=ExtResource("7_0qyqq")]
-position = Vector2(0, -3000)
+[node name="Center" parent="." instance=ExtResource("4_jfd88")]

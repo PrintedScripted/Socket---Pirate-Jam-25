@@ -13,7 +13,6 @@ config_version=5
 config/name="Socket - Pirate Jam 2025"
 run/main_scene="res://Scenes/Map.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
@@ -31,6 +30,7 @@ Enemy=""
 Player=""
 Spawn=""
 Level=""
+SpawnResource=""
 
 [input]
 
