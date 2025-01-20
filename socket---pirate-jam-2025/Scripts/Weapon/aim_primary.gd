@@ -17,6 +17,6 @@ func _process(_delta: float) -> void:
 
 func shoot() -> void:
 	var inst: Projectile = projectile.instantiate()
+	inst.spawned_from = self
 	owner.add_child(inst)
-	inst.transform = $Projectile_Spawn1.global_transform
-	
+	inst.transform = $Center/Projectile_Spawn1.global_transform

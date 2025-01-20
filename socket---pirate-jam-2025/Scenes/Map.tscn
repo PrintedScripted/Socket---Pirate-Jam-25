@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddt88exu6445"]
+[gd_scene load_steps=7 format=3 uid="uid://ddt88exu6445"]
 
 [ext_resource type="Texture2D" uid="uid://d3m24njyngnxv" path="res://Sprites/black_background.png" id="1_hecyh"]
 [ext_resource type="PackedScene" uid="uid://drjj7gl8k7x17" path="res://Scenes/Player/Player.tscn" id="2_xm666"]
 [ext_resource type="Script" path="res://Scripts/Misc/camera.gd" id="3_k5hh6"]
-[ext_resource type="PackedScene" uid="uid://c16755oqq5wqb" path="res://Scenes/Enemies/Striker.tscn" id="4_aio3x"]
-[ext_resource type="PackedScene" uid="uid://hy2i1qnbe8i5" path="res://Scenes/Enemies/Dasher.tscn" id="5_kdxtk"]
-[ext_resource type="PackedScene" uid="uid://bre27k0wm1qsp" path="res://Scenes/Enemies/Warper.tscn" id="6_lyvri"]
+[ext_resource type="Script" path="res://Scripts/Misc/spawn_rotate.gd" id="4_5i1lb"]
+[ext_resource type="PackedScene" uid="uid://y1u2u2vfrxdd" path="res://spawnpoint.tscn" id="7_0qyqq"]
 
 [sub_resource type="Environment" id="Environment_thjbp"]
 background_mode = 3
@@ -16,13 +15,13 @@ glow_bloom = 1.0
 glow_hdr_threshold = 1.5
 glow_hdr_luminance_cap = 256.0
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" groups=["Level"]]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -2747.0
-offset_top = -1725.0
-offset_right = 2809.0
-offset_bottom = 1719.0
+offset_left = -3500.0
+offset_top = -3500.0
+offset_right = 3500.0
+offset_bottom = 3500.0
 texture = ExtResource("1_hecyh")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -37,21 +36,22 @@ limit_left = -2000
 limit_top = -2000
 limit_right = 2000
 limit_bottom = 2000
+limit_smoothed = true
 script = ExtResource("3_k5hh6")
 target = NodePath("../Player")
 MAX_DISTANCE = 0.1
 
-[node name="Striker" parent="." instance=ExtResource("4_aio3x")]
-modulate = Color(1.2, 0, 0, 1)
-position = Vector2(-185, 64)
-scale = Vector2(0.3, 0.3)
+[node name="Center" type="Marker2D" parent="."]
+script = ExtResource("4_5i1lb")
 
-[node name="Dasher" parent="." instance=ExtResource("5_kdxtk")]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(-184, 146)
-scale = Vector2(0.3, 0.3)
+[node name="Spawnpoint4" parent="Center" instance=ExtResource("7_0qyqq")]
+position = Vector2(3000, 0)
 
-[node name="Warper" parent="." instance=ExtResource("6_lyvri")]
-modulate = Color(0, 2, 0, 1)
-position = Vector2(-183, 237)
-scale = Vector2(0.3, 0.3)
+[node name="Spawnpoint3" parent="Center" instance=ExtResource("7_0qyqq")]
+position = Vector2(-3000, 0)
+
+[node name="Spawnpoint2" parent="Center" instance=ExtResource("7_0qyqq")]
+position = Vector2(0, 3000)
+
+[node name="Spawnpoint" parent="Center" instance=ExtResource("7_0qyqq")]
+position = Vector2(0, -3000)

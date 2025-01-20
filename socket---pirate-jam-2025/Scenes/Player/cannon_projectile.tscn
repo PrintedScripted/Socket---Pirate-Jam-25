@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://5nkwjsatrtjd" path="res://Sprites/drone.png" id="2_1xjs4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c16bx"]
-radius = 171.977
+radius = 52.0384
 
 [node name="Cannon Projectile" type="Area2D"]
-collision_mask = 6
+collision_layer = 7
 script = ExtResource("1_02vyb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 1.2, 1)
-scale = Vector2(50, 50)
+scale = Vector2(15, 15)
 texture = ExtResource("2_1xjs4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

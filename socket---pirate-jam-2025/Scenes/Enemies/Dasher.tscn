@@ -4,12 +4,13 @@
 [ext_resource type="Script" path="res://Scripts/Enemy/enemy_base.gd" id="1_w643j"]
 
 [node name="Dasher" type="CharacterBody2D" groups=["Enemy"]]
-collision_layer = 0
+modulate = Color(1.3, 0, 1.3, 1)
+scale = Vector2(0.3, 0.3)
 motion_mode = 1
 script = ExtResource("1_w643j")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-69, 95, 1, 29, 70, 94, 0, -125)
+polygon = PackedVector2Array(-69, 95, 0, 100, 70, 94, 0, -125)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_a15u3")
