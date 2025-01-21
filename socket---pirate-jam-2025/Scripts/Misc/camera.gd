@@ -24,4 +24,4 @@ func _process(delta: float):
 				target_position.y = clamp(target_position.y, -MAX_DISTANCE + target_position.y, MAX_DISTANCE + target_position.y)
 		
 	if target_position != Vector2.INF:
-		position = lerp(position, target_position * 10, SMOOTH_SPEED * delta)
+		position = lerp(position, target_position /2, SMOOTH_SPEED * delta)
