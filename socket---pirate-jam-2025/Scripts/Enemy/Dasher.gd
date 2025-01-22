@@ -8,13 +8,23 @@ func _physics_process(delta: float) -> void:
 	velocity = position.direction_to(Vector2(0,0)) * speed * delta
 	if distance > circle_distance:
 		move_and_slide()
+	elif distance < circle_distance - 1:
+		velocity = -velocity
+		move_and_slide()
 	else:
 		circle_positioning()
 	look_at(Vector2(0,0))
 	rotation_degrees += 90
 
 func circle_positioning():
-	if position.x =< 0: pass
-	elif position.x => 0: 
-	elif position.y =< 0:
-	elif position.y =>
+	var posx = position.x
+	var posy = position.y
+	if posx < 1 and posy <= 0:
+		velocity = Vector2(100,0)
+	elif posx >= 0 and posy < 1:
+		velocity = Vector2(0,100)
+	elif posx > 1 and posy >= 0:
+		velocity = Vector2(-100,0)
+	elif posx <= 0 and posy > 1:
+		velocity = Vector2(0,-100)
+	move_and_slide()

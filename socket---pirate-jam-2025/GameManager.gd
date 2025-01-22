@@ -12,7 +12,7 @@ var enemy_spawn_timer: Timer
 var enemy_spawnrate: float = 2.5  #Scale from Difficulty
 var rand_spawn_chance: int
 var enemy_inst
-var group_size: int = 2  #Scale from Difficulty
+var group_size: int = 10  #Scale from Difficulty
 var enemy_health_scaling: float = 1.0 #Scale from Difficulty
 var enemy_speed_scaling: float = 1.0 #Scale from Difficulty
 
